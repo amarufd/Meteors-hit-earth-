@@ -13,18 +13,19 @@ webpage <- read_html(webpage)
 contenidoWebNoticia <- html_nodes(webpage,'.post-2')
 
 # Pasando la info a texto
-textoNoticia <- html_text(contenidoWebNoticia)
+textoNoticia <- html_text(contenidoWebaboutus)
 
 # Viendo a priori la info en la variable textoNoticia
 print(textoNoticia)
-
-# Pregunta: ¿Qué representa el \n?
 
 # Eliminando los \n,comillas("),puntos(.) y comas(,) del texto
 textoNoticia <- gsub("\n","",textoNoticia)
 textoNoticia <- gsub("\"","",textoNoticia)
 textoNoticia <- gsub("[.]","",textoNoticia)
 textoNoticia <- gsub(",","",textoNoticia)
+textoNoticia <- gsub("-","",textoNoticia)
+textoNoticia <- gsub("'","",textoNoticia)
+
 
 # Viendo a priori la info en la variable textoNoticia
 print(textoNoticia)
