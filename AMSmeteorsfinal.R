@@ -10,7 +10,7 @@ webpage<- 'https://www.amsmeteors.org/about/'
 webpage <- read_html(webpage)
 
 # Extrayendo contenido en la clase About AMS
-contenidoWebNoticia <- html_nodes(webpage,'.post-2')
+contenidoWebaboutus <- html_nodes(webpage,'.post-2')
 
 # Pasando la info a texto
 textoNoticia <- html_text(contenidoWebaboutus)
@@ -25,7 +25,8 @@ textoNoticia <- gsub("[.]","",textoNoticia)
 textoNoticia <- gsub(",","",textoNoticia)
 textoNoticia <- gsub("-","",textoNoticia)
 textoNoticia <- gsub("'","",textoNoticia)
-
+textoNoticia <- gsub(":","",textoNoticia)
+textoNoticia <- gsub(";","",textoNoticia)
 
 # Viendo a priori la info en la variable textoNoticia
 print(textoNoticia)
